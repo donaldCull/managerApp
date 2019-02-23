@@ -3,6 +3,10 @@
     "rules": {
         "linebreak-style": ["error", "windows"],
         "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-one-expression-per-line": "off",
+        "react/destructuring-assignment": "off",
+        "arrow-body-style": "off",
+        "arrow-parens": "off"
     }
 }

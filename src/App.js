@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import firebase from '@firebase/app';
+import { createStore, applyMiddleware } from 'redux';
+import firebase from 'firebase';
+import thunk from 'redux-thunk';
+import Router from './Router';
 import reducers from './reducers';
 
 class App extends Component {
@@ -21,10 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={createStore(reducers)}>
-        <View>
-          <Text>Hello!</Text>
-        </View>
+      <Provider store={createStore(reducers, {}, applyMiddleware(thunk))}>
+        <Router />
       </Provider>
     );
   }
